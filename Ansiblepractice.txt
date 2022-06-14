@@ -1,0 +1,58 @@
+Ansible training
+I] Section 1&2.
+   intraducation about ansible and Lab setup.
+
+(1).Installed the $ Vm in the virtualbox
+    a. ansible-c
+    b. mhost1
+    c. mhost2
+    d. mhost3
+(2).Configuring Ipv4 IP address and assigned hostname.
+     a.nmtui (Command)
+
+     b. 192.168.99.10 	mhost1.example.com 	mhost1
+        192.168.99.20 	mhost2.example.com 	mhost2
+        192.168.99.30  	mhost3.example.com 	mhost3
+
+(3). Ansible Installation.
+(4). Setting up ssh-key relationship for root user.
+     root@ansible-c:~/.ssh# for host in 1 2 3
+                           > do
+                           > ssh-copy-id mhost$host
+                           > done
+                           /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+
+(III)Section 3.
+  1. Core Component of ansible.
+
+      a. Ansible Inventories:
+                  Defines hosts and grps of hosts on which ansible operates.
+      b. Ansible modules:
+                   Module is small python program which is designed to execute task. 
+      c. Ansible Variables:
+                    Variable is used in Playbook.
+      d. Ansible Facts: 
+                   its imp for conditional playbook execution.
+      e. Ansible Plays:
+                   Ansible pay is wrritten in YAML, its defines specific task to executed on target hosts.
+      f. Ansible Playbook: 
+                  list of ansible plays.
+
+  2.IMP default setting of ansible.
+     
+       inventory      = /etc/ansible/hosts
+       remote_port    = 22
+       forks          = 5
+       roles_path      = ext/ansible/roles
+       module_name     =Command
+  3. Ansible Modules:
+          ping
+          setup
+          yum
+          service
+          systemd
+          cron
+          lvg
+          lvol
+          fetch etc.
+ 
